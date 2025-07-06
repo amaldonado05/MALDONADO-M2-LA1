@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Coin Craze</title>
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    image-rendering: pixelated;
+  }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="game-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+
+  <script src="scenes/Preload Scene/Preload.js"></script>
+  <script src="scenes/UI/Menu.js"></script>
+  <script src="scenes/UI/Instructions.js"></script>
+  <script src="scenes/Levels/Level1.js"></script>
+  <script src="scenes/Levels/Level2.js"></script>
+  <script src="scenes/Levels/Level3.js"></script>
+  <script src="scenes/UI/GameOver.js"></script>
+  <script src="scenes/UI/LevelSelector.js"></script>
+  <script src="scenes/UI/Congratulations.js"></script>
+
+  <script src="main.js"></script>
+
+  <script>
+    console.log('Game starting...');
+    const scripts = [
+      'Preload.js',
+      'Menu.js', 
+      'Level1.js',
+      'GameOver.js',
+      'main.js'
+    ];
+    
+    scripts.forEach(script => {
+      console.log(script, 'loaded:', 
+        document.querySelector(`script[src*="${script}"]`) ? '✅' : '❌');
+    });
+  </script>
+</body>
+</html>
